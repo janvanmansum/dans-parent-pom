@@ -167,12 +167,24 @@
                     <version>${scala-maven-plugin.version}</version>
                     <executions>
                         <execution>
+                            <id>all</id>
                             <goals>
                                 <goal>compile</goal>
                                 <goal>testCompile</goal>
                                 <goal>add-source</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>doc</id>
+                            <goals>
                                 <goal>doc-jar</goal>
                             </goals>
+                            <configuration combine.self="append">
+                                <args>
+                                    <arg>-diagrams</arg>
+<!--                                    <arg>-diagrams-debug</arg>-->
+                                </args>
+                            </configuration>
                         </execution>
                     </executions>
                     <configuration>
